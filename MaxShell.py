@@ -35,6 +35,7 @@ while checkForKey == "yes":
                 print("--s | Support Max")
                 print("--i | Info")
                 print("physCalc | Calculations that are useful for physics")
+                print("geoCalc | Calculations that are useful for Geometry")
                 print("--")
 
             elif currentInput == "showInput":
@@ -120,6 +121,35 @@ while checkForKey == "yes":
                 print("This is set of tools that makes modern tools simplified to be used in a terminal.")
             elif currentInput == "":
                 spaceholder = ""
+            elif currentInput == "geoCalc":
+                geoInput = ""
+                while geoInput != close:
+                    print()
+                    print("GeoCalc Started")
+                    print("Type 'help' for commands.")
+                    print()
+                    geoInput = input(currentInput + "/geo:")
+                    if geoInput == "help":
+                        print()
+                        print("calcPythag")
+                        print()
+                    elif geoInput == "calcPythag":
+                        print("")
+                        print("Insert A")
+                        geoInputA = int(input(currentUser + "/geo:"))
+                        print()
+                        print("Insert B")
+                        geoInputB = int(input(currentUser + "/geo:"))
+                        geoAPrp = geoInputA**2
+                        geoBPrp = geoInputB**2
+                        geoC = geoAPrp + geoBPrp
+                        geoCprp = sqrt(geoC)
+                        print()
+                        print("C =")
+                        print(geoCprp)
+
+                else:
+                    print("ERROR: '" + geoInput + "' is not an input, type help for commands'")
 
             else:
                 print("")
