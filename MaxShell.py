@@ -47,6 +47,7 @@ while checkForKey == "yes":
                 print("")
                 print("current version of MaxShell: '" + currentV + "'")
                 print("--")
+
             elif currentInput == "--s":
                 print("")
                 print("go to maxsimon.io to support Max")
@@ -123,10 +124,10 @@ while checkForKey == "yes":
                 spaceholder = ""
             elif currentInput == "geoCalc":
                 geoInput = ""
-                while geoInput != close:
-                    print()
-                    print("GeoCalc Started")
-                    print("Type 'help' for commands.")
+                print()
+                print("GeoCalc Started")
+                print("Type 'help' for commands.")
+                while geoInput != "close":
                     print()
                     geoInput = input(currentInput + "/geo:")
                     if geoInput == "help":
@@ -136,14 +137,14 @@ while checkForKey == "yes":
                     elif geoInput == "calcPythag":
                         print("")
                         print("Insert A")
-                        geoInputA = int(input(currentUser + "/geo:"))
+                        geoInputA = int(input(currentInput + "/geo:"))
                         print()
                         print("Insert B")
-                        geoInputB = int(input(currentUser + "/geo:"))
+                        geoInputB = int(input(currentInput + "/geo:"))
                         geoAPrp = geoInputA**2
                         geoBPrp = geoInputB**2
                         geoC = geoAPrp + geoBPrp
-                        geoCprp = sqrt(geoC)
+                        geoCprp = geoC**0.5
                         print()
                         print("C =")
                         print(geoCprp)
