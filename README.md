@@ -1,6 +1,13 @@
 # MaxShell
 MaxShell is a simple to use custom Python Shell
 
+## Version 2.0 updates:
+1. AvgCalc - A brand new calculator to calculate averages.
+2. Future Settings - Implementation of "options" for MaxShell (please note this is not available yet)
+3. Changeable Access Keys - An easy way to adjust access keys
+4. Open Source - MaxShell is now open source!
+5. Revamped, more finished product.
+
 ## Features:
 1. Simple to use.
 2. A ton of very useful commands.
