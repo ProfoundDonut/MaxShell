@@ -1,22 +1,15 @@
+import os
+import sys
+
 currentKey = "12345"
 checkForKey = "yes"
 while checkForKey == "yes":
     accessKey = input("Enter acess key:")
     if accessKey == currentKey:
-        currentV = "2.2"
+        currentV = "2.0"
         currentInput = ""
         personName = "user"
         systemRunning = "yes"
-
-        print("")
-        print("")
-        print("running var tests:")
-        print("currentV = " + currentV)
-        print("currentInput = null")
-        print("personName = " + personName)
-        print("systemRunning = " + systemRunning)
-        print("")
-        print("tests completed")
         print("")
         print("starting Max MaxShell V" + currentV)
         print("")
@@ -24,7 +17,7 @@ while checkForKey == "yes":
         print("To get started, type 'help' to learn some commands")
         print("--")
         while systemRunning == "yes":
-            currentInput = input(personName + ":")
+            currentInput = input(personName + ": ")
 
             if currentInput == "help":
                 print("")
@@ -37,8 +30,8 @@ while checkForKey == "yes":
                 print("physCalc | Calculations that are useful for physics")
                 print("geoCalc | Calculations that are useful for Geometry")
                 print("avgCalc | Calculates averages like mean, mode, and median")
-                print("settings | Options for MaxShell")
                 print("showSource | Opens source code for MaxShell")
+                print("changeKey ")
                 print("--")
 
             elif currentInput == "showInput":
@@ -95,7 +88,8 @@ while checkForKey == "yes":
                 print("If you would like to continue, please type 'I Agree'")
                 openCheck = input(personName + "/open:")
                 if openCheck == "I Agree":
-                    #Open source
+                    os.system("nano MaxShell.py")
+                    print()
                 else:
                     print()
                     print("Sorry, that was invalid.")

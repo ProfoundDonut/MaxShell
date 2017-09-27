@@ -20,13 +20,13 @@ MaxShell is a simple to use custom Python Shell
 1. Start MaxShell
 2. type showSource
 3. This will open the source code in your default text editor, all of the editable code is in Python.
+
 NOTE: Just because you edit the source, it is still my intellectual property, and ownership has not transferred to you.
 
 
 ## Requirements:
-Python 3.6
-[Install Python](https://www.python.org/downloads/)
+Python 3.6 - [Install Python](https://www.python.org/downloads/)
 
-_Thanks,
+_Thanks,_
 
-Max_
+_Max S._
