@@ -3,7 +3,7 @@ checkForKey = "yes"
 while checkForKey == "yes":
     accessKey = input("Enter acess key:")
     if accessKey == currentKey:
-        currentV = "1.5.1"
+        currentV = "2.1"
         currentInput = ""
         personName = "user"
         systemRunning = "yes"
@@ -36,6 +36,8 @@ while checkForKey == "yes":
                 print("--i | Info")
                 print("physCalc | Calculations that are useful for physics")
                 print("geoCalc | Calculations that are useful for Geometry")
+                print("avgCalc | Calculates averages like mean, mode, and median")
+                print("settings | Options for MaxShell")
                 print("--")
 
             elif currentInput == "showInput":
@@ -47,6 +49,44 @@ while checkForKey == "yes":
                 print("")
                 print("current version of MaxShell: '" + currentV + "'")
                 print("--")
+
+            elif currentInput == "settings":
+                settingsOn = "true"
+                while settingsOn == "true":
+                    print()
+                    print("Settings:")
+                    print()
+                    print("Options: ")
+                    print("name | changes name for shell")
+                    print("password | changes password")
+                    print("close")
+                    settingsInput = input(personName + "/settings:")
+                    if settingsInput == "close":
+                        settingsOn = "false"
+                    else:
+                        print()
+                        print("ERROR: '" + settingsInput + "' is not an input, type help for commands.")
+
+            elif currentInput == "avgCalc":
+                print()
+                print("AverageCalc has started")
+                print("Type help to get started.")
+                print()
+                avgRunning = "yes"
+                while avgRunning == "yes"
+                    avgInput = input(personName + "/avg:")
+
+                    if avgInput == "help":
+                        print()
+                        print("calcMean | Calculates mean from up to 10 numbers.")
+                        print("calcMedian | Calculates median from up to 10 numbers.")
+                        print("calcMode | Calculates mode from up to 10 numbers.")
+                        print("close | Closes AverageCalc")
+                        print()
+                    elif avgInput == "close":
+                        print("AverageCalc Clsoing")
+                        avgInput = "no"
+
 
             elif currentInput == "--s":
                 print("")
@@ -61,6 +101,7 @@ while checkForKey == "yes":
                     print("")
                     print("shutting down")
                     systemRunning = "no"
+                    checkForKey = "no"
                     print("")
                 elif shutdownConfirm == "n":
                     print("")
@@ -158,11 +199,5 @@ while checkForKey == "yes":
                 print("--")
     elif accessKey == "close":
         checkForKey = "no"
-    elif accessKey == "change":
-        testKey = input("Insert current Acess Key:")
-        if testKey == accessKey:
-            newKey = input("Type in new key:")
-            acessKey = newKey
-
     else:
         print("ERROR: Acess Key Invalid")
