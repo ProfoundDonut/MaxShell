@@ -3,7 +3,7 @@ checkForKey = "yes"
 while checkForKey == "yes":
     accessKey = input("Enter acess key:")
     if accessKey == currentKey:
-        currentV = "2.1"
+        currentV = "2.1.1"
         currentInput = ""
         personName = "user"
         systemRunning = "yes"
@@ -73,7 +73,7 @@ while checkForKey == "yes":
                 print("Type help to get started.")
                 print()
                 avgRunning = "yes"
-                while avgRunning == "yes"
+                while avgRunning == "yes":
                     avgInput = input(personName + "/avg:")
 
                     if avgInput == "help":

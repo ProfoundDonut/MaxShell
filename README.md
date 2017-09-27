@@ -1,6 +1,12 @@
 # MaxShell
 MaxShell is a simple to use custom Python Shell
 
+## Features:
+1. Simple to use.
+2. A ton of very useful commands.
+3. Easy to edit source code.
+4. Constantly being updated.
+
 ## Instructions:
 1. Open Python IDLE
 2. Open the "MaxShell.py" file
@@ -13,4 +19,7 @@ MaxShell is a simple to use custom Python Shell
 
 ## Requirements:
 Python 3.6
-[Install Python](python.com)
+[Install Python](https://www.python.org/downloads/)
+
+**Thanks,**
+**Max**
