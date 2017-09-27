@@ -1,22 +1,15 @@
+import os
+import sys
+
 currentKey = "12345"
 checkForKey = "yes"
 while checkForKey == "yes":
     accessKey = input("Enter acess key:")
     if accessKey == currentKey:
-        currentV = "1.5.1"
+        currentV = "2.0"
         currentInput = ""
         personName = "user"
         systemRunning = "yes"
-
-        print("")
-        print("")
-        print("running var tests:")
-        print("currentV = " + currentV)
-        print("currentInput = null")
-        print("personName = " + personName)
-        print("systemRunning = " + systemRunning)
-        print("")
-        print("tests completed")
         print("")
         print("starting Max MaxShell V" + currentV)
         print("")
@@ -24,7 +17,7 @@ while checkForKey == "yes":
         print("To get started, type 'help' to learn some commands")
         print("--")
         while systemRunning == "yes":
-            currentInput = input(personName + ":")
+            currentInput = input(personName + ": ")
 
             if currentInput == "help":
                 print("")
@@ -36,6 +29,9 @@ while checkForKey == "yes":
                 print("--i | Info")
                 print("physCalc | Calculations that are useful for physics")
                 print("geoCalc | Calculations that are useful for Geometry")
+                print("avgCalc | Calculates averages like mean, mode, and median")
+                print("showSource | Opens source code for MaxShell")
+                print("changeKey ")
                 print("--")
 
             elif currentInput == "showInput":
@@ -47,6 +43,57 @@ while checkForKey == "yes":
                 print("")
                 print("current version of MaxShell: '" + currentV + "'")
                 print("--")
+
+            elif currentInput == "settings":
+                settingsOn = "true"
+                while settingsOn == "true":
+                    print()
+                    print("Settings:")
+                    print()
+                    print("Options: ")
+                    print("name | changes name for shell")
+                    print("password | changes password")
+                    print("close")
+                    settingsInput = input(personName + "/settings:")
+                    if settingsInput == "close":
+                        settingsOn = "false"
+                    else:
+                        print()
+                        print("ERROR: '" + settingsInput + "' is not an input, type help for commands.")
+
+            elif currentInput == "avgCalc":
+                print()
+                print("AverageCalc has started")
+                print("Type help to get started.")
+                print()
+                avgRunning = "yes"
+                while avgRunning == "yes":
+                    avgInput = input(personName + "/avg:")
+
+                    if avgInput == "help":
+                        print()
+                        print("calcMean | Calculates mean from up to 10 numbers.")
+                        print("calcMedian | Calculates median from up to 10 numbers.")
+                        print("calcMode | Calculates mode from up to 10 numbers.")
+                        print("close | Closes AverageCalc")
+                        print()
+                    elif avgInput == "close":
+                        print("AverageCalc Clsoing")
+                        avgInput = "no"
+
+            elif currentInput == "showSource":
+                print()
+                print("WARNING: This will open the source code, anything edited will be changed.")
+                print("Please note, it is still not allowed to distribute MaxShell, and remains my intelectual property.")
+                print("If you would like to continue, please type 'I Agree'")
+                openCheck = input(personName + "/open:")
+                if openCheck == "I Agree":
+                    os.system("nano MaxShell.py")
+                    print()
+                else:
+                    print()
+                    print("Sorry, that was invalid.")
+                    print()
 
             elif currentInput == "--s":
                 print("")
@@ -61,6 +108,7 @@ while checkForKey == "yes":
                     print("")
                     print("shutting down")
                     systemRunning = "no"
+                    checkForKey = "no"
                     print("")
                 elif shutdownConfirm == "n":
                     print("")
@@ -158,11 +206,6 @@ while checkForKey == "yes":
                 print("--")
     elif accessKey == "close":
         checkForKey = "no"
-    elif accessKey == "change":
-        testKey = input("Insert current Acess Key:")
-        if testKey == accessKey:
-            newKey = input("Type in new key:")
-            acessKey = newKey
-
     else:
         print("ERROR: Acess Key Invalid")
+#Created By Max Simon
