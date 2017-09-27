@@ -3,7 +3,7 @@ checkForKey = "yes"
 while checkForKey == "yes":
     accessKey = input("Enter acess key:")
     if accessKey == currentKey:
-        currentV = "2.1.1"
+        currentV = "2.2"
         currentInput = ""
         personName = "user"
         systemRunning = "yes"
@@ -38,6 +38,7 @@ while checkForKey == "yes":
                 print("geoCalc | Calculations that are useful for Geometry")
                 print("avgCalc | Calculates averages like mean, mode, and median")
                 print("settings | Options for MaxShell")
+                print("showSource | Opens source code for MaxShell")
                 print("--")
 
             elif currentInput == "showInput":
@@ -87,6 +88,18 @@ while checkForKey == "yes":
                         print("AverageCalc Clsoing")
                         avgInput = "no"
 
+            elif currentInput == "showSource":
+                print()
+                print("WARNING: This will open the source code, anything edited will be changed.")
+                print("Please note, it is still not allowed to distribute MaxShell, and remains my intelectual property.")
+                print("If you would like to continue, please type 'I Agree'")
+                openCheck = input(personName + "/open:")
+                if openCheck == "I Agree":
+                    #Open source
+                else:
+                    print()
+                    print("Sorry, that was invalid.")
+                    print()
 
             elif currentInput == "--s":
                 print("")
@@ -201,3 +214,4 @@ while checkForKey == "yes":
         checkForKey = "no"
     else:
         print("ERROR: Acess Key Invalid")
+#Created By Max Simon
