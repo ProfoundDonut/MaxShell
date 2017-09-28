@@ -34,6 +34,4 @@ NOTE: Just because you edit the source, it is still my intellectual property, an
 ## Requirements:
 Python 3.6 - [Install Python](https://www.python.org/downloads/)
 
-_Thanks,_
-
 _Max S._

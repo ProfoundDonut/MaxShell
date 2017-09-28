@@ -6,12 +6,12 @@ checkForKey = "yes"
 while checkForKey == "yes":
     accessKey = input("Enter acess key:")
     if accessKey == currentKey:
-        currentV = "2.0"
+        currentV = "2.2"
         currentInput = ""
         personName = "user"
         systemRunning = "yes"
         print("")
-        print("starting Max MaxShell V" + currentV)
+        print("starting MaxShell V" + currentV)
         print("")
         print("Welcome!")
         print("To get started, type 'help' to learn some commands")
@@ -24,6 +24,7 @@ while checkForKey == "yes":
                 print("help center:")
                 print("showInput | A simple command to show the input")
                 print("shutdown | Shuts down program")
+                print("logout | Logs out to access mode.")
                 print("--v | Displays current version")
                 print("--s | Support Max")
                 print("--i | Info")
@@ -31,7 +32,8 @@ while checkForKey == "yes":
                 print("geoCalc | Calculations that are useful for Geometry")
                 print("avgCalc | Calculates averages like mean, mode, and median")
                 print("showSource | Opens source code for MaxShell")
-                print("changeKey ")
+                print("changeKey | Changes current access key.")
+                print("count | Counts to a certain number from one.")
                 print("--")
 
             elif currentInput == "showInput":
@@ -46,7 +48,8 @@ while checkForKey == "yes":
 
             elif currentInput == "settings":
                 settingsOn = "true"
-                while settingsOn == "true":
+                print("Sorry, settings is not available.")
+                while settingsOn == "errorCode3000":
                     print()
                     print("Settings:")
                     print()
@@ -60,6 +63,10 @@ while checkForKey == "yes":
                     else:
                         print()
                         print("ERROR: '" + settingsInput + "' is not an input, type help for commands.")
+            elif currentInput == "logout":
+                print("logging out")
+                logout = "yes"
+
 
             elif currentInput == "avgCalc":
                 print()
@@ -80,6 +87,23 @@ while checkForKey == "yes":
                     elif avgInput == "close":
                         print("AverageCalc Clsoing")
                         avgInput = "no"
+                    elif avgInput == "calcMean":
+                        avgInputMeanNumber = int(input("How many numbers would you like to calculate?"))
+                        if avgInputMeanNumber >= 10:
+                            print("ERROR: The number cannot be above 10")
+            elif currentInput == "count":
+                countRunning = "yes"
+                while countRunning == "yes":
+                    print("What number would you like to count to?")
+
+                    countNumber = input(personName + "/count: ")
+                    if countNumber == "close":
+                        countRunning = "no"
+
+                    else:
+                        os.system("jot - 1 " + countNumber)
+                        countRunning = "no"
+
 
             elif currentInput == "showSource":
                 print()
@@ -108,7 +132,10 @@ while checkForKey == "yes":
                     print("")
                     print("shutting down")
                     systemRunning = "no"
-                    checkForKey = "no"
+                    if logout == "yes":
+                        checkForKey = "yes"
+                    else:
+                        checkForKey = "no"
                     print("")
                 elif shutdownConfirm == "n":
                     print("")
