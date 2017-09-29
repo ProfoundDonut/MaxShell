@@ -5,11 +5,13 @@ currentKey = "12345"
 checkForKey = "yes"
 while checkForKey == "yes":
     accessKey = input("Enter acess key:")
+    keyTryAmmount = 1
     if accessKey == currentKey:
         currentV = "2.2"
         currentInput = ""
         personName = "user"
         systemRunning = "yes"
+        logout = "no"
         print("")
         print("starting MaxShell V" + currentV)
         print("")
@@ -23,8 +25,10 @@ while checkForKey == "yes":
                 print("")
                 print("help center:")
                 print("showInput | A simple command to show the input")
+                print("settings")
                 print("shutdown | Shuts down program")
                 print("logout | Logs out to access mode.")
+                print("cancelLogout | Cancles logout mode.")
                 print("--v | Displays current version")
                 print("--s | Support Max")
                 print("--i | Info")
@@ -64,8 +68,16 @@ while checkForKey == "yes":
                         print()
                         print("ERROR: '" + settingsInput + "' is not an input, type help for commands.")
             elif currentInput == "logout":
-                print("logging out")
+                print()
+                print("The system in now in logout mode, type 'shutdown' to logout.")
                 logout = "yes"
+                print()
+                currentInput = "shutdown"
+
+            elif currentInput == "cancelLogout":
+                logout = "no"
+                print()
+                print("Logout mode canceled.  Typing shutdown will shutdown the system normally")
 
 
             elif currentInput == "avgCalc":
@@ -102,6 +114,7 @@ while checkForKey == "yes":
 
                     else:
                         os.system("jot - 1 " + countNumber)
+                        print()
                         countRunning = "no"
 
 
@@ -112,7 +125,7 @@ while checkForKey == "yes":
                 print("If you would like to continue, please type 'I Agree'")
                 openCheck = input(personName + "/open:")
                 if openCheck == "I Agree":
-                    os.system("nano MaxShell.py")
+                    os.system("open -a atom MaxShell.py")
                     print()
                 else:
                     print()
@@ -121,8 +134,15 @@ while checkForKey == "yes":
 
             elif currentInput == "--s":
                 print("")
-                print("go to maxsimon.io to support Max")
-                print("--")
+                print("Would you like to go to maxsimon.io(y/n)")
+                print()
+                supportCheck = input(personName + "/support: ")
+                if supportCheck == "y":
+                    os.system("open -a safari http://maxsimon.io")
+                elif supportCheck == "n":
+                    print("Cacnled")
+
+
             elif currentInput == "hello":
                 print("Hi!")
             elif currentInput == "shutdown":
@@ -235,4 +255,7 @@ while checkForKey == "yes":
         checkForKey = "no"
     else:
         print("ERROR: Acess Key Invalid")
+        keyTryAmmount = keyTryAmmount + 1
+if keyTryAmmount == 5:
+    checkForKey = "no"
 #Created By Max Simon
