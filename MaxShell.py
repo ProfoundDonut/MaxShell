@@ -1,5 +1,56 @@
 import os
 import sys
+import random
+def guessing_game():
+    print()
+    print()
+    print("Welcome to guessing_game!")
+    print("type help to begin")
+    print()
+    print()
+    running = "yes"
+    while running == "yes":
+        guessingInput = input(userName + "/game: ")
+
+        if guessingInput == "start":
+            print()
+            print("Starting Game:")
+            gameRunning = "yes"
+            print()
+            print()
+            pickedNumber = random.randint(1, 1000)
+            while gameRunning == "yes":
+                gameInput = int(input("Please guess a number: "))
+                if gameInput == pickedNumber:
+                    print()
+                    print("Your Right!!!")
+                    gameRunning = "no"
+                    print()
+                elif gameInput > pickedNumber:
+                    print()
+                    print("Sorry, close but too high.")
+                    print()
+                elif gameInput < pickedNumber:
+                    print()
+                    print("Sorry, close but too low.")
+                    print()
+                else:
+                    print("ERROR: That is not a number")
+        elif guessingInput == "close":
+            print()
+            print("Shutting down.")
+            print()
+            running = "no"
+        elif guessingInput == "help":
+            print()
+            print("start | Starts game.")
+            print("help | options menu")
+            print("close| Closes guessing_game")
+            print("randA | Random Array (NOT WORKING)")
+
+        else:
+            print()
+            print("ERROR: '" + guessingInput + "' is not an input.'")
 
 currentKey = "12345"
 checkForKey = "yes"
@@ -7,19 +58,19 @@ while checkForKey == "yes":
     accessKey = input("Enter acess key:")
     keyTryAmmount = 1
     if accessKey == currentKey:
-        currentV = "2.2"
+        userName = "user"
+        currentV = "2.5"
         currentInput = ""
-        personName = "user"
         systemRunning = "yes"
         logout = "no"
         print("")
         print("starting MaxShell V" + currentV)
         print("")
-        print("Welcome!")
+        print("Welcome " + userName)
         print("To get started, type 'help' to learn some commands")
         print("--")
         while systemRunning == "yes":
-            currentInput = input(personName + ": ")
+            currentInput = input(userName + ": ")
 
             if currentInput == "help":
                 print("")
@@ -38,6 +89,8 @@ while checkForKey == "yes":
                 print("showSource | Opens source code for MaxShell")
                 print("changeKey | Changes current access key.")
                 print("count | Counts to a certain number from one.")
+                print("guessingGame | A simple numeric guessing game.")
+                print("kittens | Emergency shutdown after 5 seconds")
                 print("--")
 
             elif currentInput == "showInput":
@@ -61,7 +114,7 @@ while checkForKey == "yes":
                     print("name | changes name for shell")
                     print("password | changes password")
                     print("close")
-                    settingsInput = input(personName + "/settings:")
+                    settingsInput = input(userName + "/settings:")
                     if settingsInput == "close":
                         settingsOn = "false"
                     else:
@@ -87,7 +140,7 @@ while checkForKey == "yes":
                 print()
                 avgRunning = "yes"
                 while avgRunning == "yes":
-                    avgInput = input(personName + "/avg:")
+                    avgInput = input(userName + "/avg:")
 
                     if avgInput == "help":
                         print()
@@ -108,7 +161,7 @@ while checkForKey == "yes":
                 while countRunning == "yes":
                     print("What number would you like to count to?")
 
-                    countNumber = input(personName + "/count: ")
+                    countNumber = input(userName + "/count: ")
                     if countNumber == "close":
                         countRunning = "no"
 
@@ -123,7 +176,7 @@ while checkForKey == "yes":
                 print("WARNING: This will open the source code, anything edited will be changed.")
                 print("Please note, it is still not allowed to distribute MaxShell, and remains my intelectual property.")
                 print("If you would like to continue, please type 'I Agree'")
-                openCheck = input(personName + "/open:")
+                openCheck = input(userName + "/open:")
                 if openCheck == "I Agree":
                     os.system("open -a atom MaxShell.py")
                     print()
@@ -136,7 +189,7 @@ while checkForKey == "yes":
                 print("")
                 print("Would you like to go to maxsimon.io(y/n)")
                 print()
-                supportCheck = input(personName + "/support: ")
+                supportCheck = input(userName + "/support: ")
                 if supportCheck == "y":
                     os.system("open -a safari http://maxsimon.io")
                 elif supportCheck == "n":
@@ -147,7 +200,7 @@ while checkForKey == "yes":
                 print("Hi!")
             elif currentInput == "shutdown":
                 print("Are you sure you would like to to shut down the system? (y/n)")
-                shutdownConfirm = input(personName + "/shutdown: ")
+                shutdownConfirm = input(userName + "/shutdown: ")
                 if shutdownConfirm == "y":
                     print("")
                     print("shutting down")
@@ -207,6 +260,16 @@ while checkForKey == "yes":
                         print("")
                         print("ERROR: '" + physInput + "' is not an input, type help for commands.")
                         print("--")
+            elif currentInput == "kittens":
+                print()
+                print()
+                print()
+                print("Kitten Power Activated")
+                print()
+                print()
+                os.system("jot - 1 500000")
+                runCancelProtocol()
+
 
             elif currentInput == "--i":
                 print()
@@ -217,6 +280,8 @@ while checkForKey == "yes":
                 print("This is set of tools that makes modern tools simplified to be used in a terminal.")
             elif currentInput == "":
                 spaceholder = ""
+            elif currentInput == "guessingGame":
+                guessing_game()
             elif currentInput == "geoCalc":
                 geoInput = ""
                 print()
@@ -244,6 +309,7 @@ while checkForKey == "yes":
                         print("C =")
                         print(geoCprp)
 
+
                 else:
                     print("ERROR: '" + geoInput + "' is not an input, type help for commands'")
 
@@ -258,4 +324,5 @@ while checkForKey == "yes":
         keyTryAmmount = keyTryAmmount + 1
 if keyTryAmmount == 5:
     checkForKey = "no"
+
 #Created By Max Simon
