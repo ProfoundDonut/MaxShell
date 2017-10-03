@@ -16,8 +16,13 @@ MaxShell is a simple to use custom Python Shell
 
 ## Instructions:
 1. Open Python IDLE
-2. Open the "MaxShell.py" file
-3. The current Access Key is '12345'
+1. Open terminal or command prompt
+2. Type Python 3 and the file path of MaxShell.py
+3. Enjoy!
+
+```
+$ python3 users/[your username]/downloads/MaxShell.py
+```
 
 #### Changing the Access Key:
 1. Open the MaxShell.py in a text editor
@@ -28,7 +33,7 @@ MaxShell is a simple to use custom Python Shell
 2. type showSource
 3. This will open the source code in your default text editor, all of the editable code is in Python.
 
-NOTE: Just because you edit the source, it is still my intellectual property, and ownership has not transferred to you.
+**_NOTE: Just because you edit the source, it is still my intellectual property, and ownership has not transferred to you._**
 
 
 ## Requirements:
