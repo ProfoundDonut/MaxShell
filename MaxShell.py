@@ -1,6 +1,7 @@
 import os
 import sys
 import random
+import getpass
 def guessing_game():
     print()
     print()
@@ -34,18 +35,23 @@ def guessing_game():
                     print()
                     print("Sorry, close but too low.")
                     print()
+                elif gameInput == "hint":
+                    if pickedNumber < 500:
+                        print("The number is smaller than 500")
+                    else:
+                        print("The number is greater than 500")
                 else:
                     print("ERROR: That is not a number")
         elif guessingInput == "close":
             print()
-            print("Shutting down.")
+            print("Closing GuessingGame")
             print()
             running = "no"
         elif guessingInput == "help":
             print()
             print("start | Starts game.")
             print("help | options menu")
-            print("close| Closes guessing_game")
+            print("close| Closes GuessingGame")
             print("randA | Random Array (NOT WORKING)")
 
         else:
@@ -55,11 +61,11 @@ def guessing_game():
 currentKey = "12345"
 checkForKey = "yes"
 while checkForKey == "yes":
-    accessKey = input("Enter acess key:")
+    accessKey = getpass.getpass("Enter acess key:")
     keyTryAmmount = 1
     if accessKey == currentKey:
         userName = "user"
-        currentV = "2.5"
+        currentV = "2.6"
         currentInput = ""
         systemRunning = "yes"
         logout = "no"
@@ -255,6 +261,15 @@ while checkForKey == "yes":
                         print("Gravitational Potensial Energy is Joules:")
                         print(9.8 * GPEmass * GPEheight)
                         print("--")
+                    elif physInput == "calcAcc":
+                        print()
+                        acVi = int(input("Enter initial velocity: "))
+                        acVf = int(input("Enter final velocity: "))
+                        acT = int(input("Enter time in S: "))
+                        acDeltaV = acVf - acVi
+                        print("Acceleration in m/s squared:")
+                        print(acDeltaV / acT)
+                        print()
 
                     else:
                         print("")
