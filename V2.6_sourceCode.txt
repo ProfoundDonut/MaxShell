@@ -65,7 +65,7 @@ while checkForKey == "yes":
     keyTryAmmount = 1
     if accessKey == currentKey:
         userName = "user"
-        currentV = "2.7"
+        currentV = "2.6"
         currentInput = ""
         systemRunning = "yes"
         logout = "no"
@@ -191,7 +191,7 @@ while checkForKey == "yes":
                 openCheck = input(userName + "/open:")
                 if openCheck == "I Agree":
                     try:
-                        os.system("maxSource.txt")
+                        os.system("start MaxShell.py")
                     except:
                         os.system("open -a atom MaxShell.py")
                     print()
@@ -206,10 +206,7 @@ while checkForKey == "yes":
                 print()
                 supportCheck = input(userName + "/support: ")
                 if supportCheck == "y":
-                    try:
-                        os.system("open -a safari http://maxsimon.io")
-                    except:
-                        os.system("cls")
+                    os.system("open -a safari http://maxsimon.io")
                 elif supportCheck == "n":
                     print("Cacnled")
 
